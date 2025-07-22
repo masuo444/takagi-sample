@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高木酒造株式会社 | 十四代 - 山形県村山市</title>
+    <meta name="description" content="元和元年創業の高木酒造株式会社。山形県村山市にて十四代をはじめとする高品質な日本酒を醸造している老舗酒蔵です。">
+    <meta name="keywords" content="高木酒造, 十四代, 日本酒, 山形, 村山市, 出羽三山, 龍の落とし子, 酒未来">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/japanese-modern.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/google-translate.css">
+    <link rel="stylesheet" href="css/ai-juyondai-chatbot.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/header-mobile-style.css">
+    
+    <!-- Template System -->
+    <script src="template-setup.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="ai-juyondai-icon.png">
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="高木酒造株式会社 - 十四代 - 山形県村山市">
+    <meta property="og:description" content="元和元年創業の高木酒造株式会社。山形県村山市にて十四代をはじめとする高品質な日本酒を醸造している老舗酒蔵です。">
+    <meta property="og:url" content="https://juyondai.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/takagi-og-image.jpg">
+    <meta property="og:site_name" content="高木酒造株式会社">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="高木酒造株式会社 - 十四代 - 山形県村山市">
+    <meta name="twitter:description" content="元和元年創業の高木酒造株式会社。山形県村山市にて十四代をはじめとする高品質な日本酒を醸造している老舗酒蔵です。">
+    <meta name="twitter:image" content="assets/images/takagi-og-image.jpg">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <a href="#" class="logo">高木酒造株式会社</a>
+            <div class="header-translate-container">
+                <div class="translate-dropdown">
+                    <button class="translate-btn" onclick="toggleTranslateDropdown()">
+                        <span class="current-lang-flag">🇯🇵</span>
+                        <span class="current-lang-text">日本語</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="translate-options" id="translateOptions" style="display: none;">
+                        <div class="translate-option" onclick="translateToLanguage('ja')">
+                            <span class="flag">🇯🇵</span>
+                            <span class="lang-name">日本語</span>
+                        </div>
+                        <div class="translate-option" onclick="translateToLanguage('en')">
+                            <span class="flag">🇺🇸</span>
+                            <span class="lang-name">English</span>
+                        </div>
+                        <div class="translate-option" onclick="translateToLanguage('ko')">
+                            <span class="flag">🇰🇷</span>
+                            <span class="lang-name">한국어</span>
+                        </div>
+                        <div class="translate-option" onclick="translateToLanguage('zh')">
+                            <span class="flag">🇨🇳</span>
+                            <span class="lang-name">中文</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav" id="mainNav">
+                <a href="#about" class="nav-link">蔵元について</a>
+                <a href="product-lineup.html" class="nav-link">商品紹介</a>
+                <a href="#awards" class="nav-link">受賞歴</a>
+                <a href="#history" class="nav-link">歴史</a>
+                <a href="#access" class="nav-link">アクセス</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content fade-in">
+            <h1 class="hero-title animate-fade-in-up">高木酒造株式会社</h1>
+            <p class="hero-subtitle japanese-decoration animate-fade-in-up delay-200">十四代 - 聞こえないものを聞き、見えないものを見る</p>
+            <a href="product-lineup.html" class="btn animate-fade-in-up delay-400 hover-lift">商品を見る</a>
+        </div>
+    </section>
+
+    <!-- 蔵元について -->
+    <section id="about" class="section scroll-fade">
+        <h2 class="section-title">高木酒造株式会社について</h2>
+        <div class="about-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div class="about-text">
+                <h3 style="font-family: var(--font-japanese); font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary-color);">元和元年創業、400年を超える歴史</h3>
+                <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                    元和元年（1615年）の創業以来、山形県村山市にて400年を超える伝統を継承しています。
+                    現当主・高木顕統（たかぎあきのり）氏のもと、最高品質の日本酒「十四代」を醸造しています。
+                </p>
+                <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                    「聞こえないものを聞き、見えないものを見る」という哲学のもと、
+                    酵母や麹菌などの微生物たちとの対話を大切にしながら、
+                    出羽三山の清らかな水と山田錦、愛山、雪女神などの最高級酒米で酒造りを行っています。
+                </p>
+                <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                    高木顕統氏は、伝統を重んじながらも革新的な発想で日本酒業界に新風を吹き込み、
+                    「十四代」ブランドを世界最高峰の日本酒へと昇華させました。
+                    限定生産による品質管理と、袋吊り・中取りなどの伝統技法により、唯一無二の味わいを生み出しています。
+                </p>
+                <div class="features-list" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                    <span class="feature-tag animate-fade-in-up delay-100 hover-lift" style="background: var(--sake-wave); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">元和元年創業</span>
+                    <span class="feature-tag animate-fade-in-up delay-200 hover-lift" style="background: var(--sake-wave); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">出羽三山の清水</span>
+                    <span class="feature-tag animate-fade-in-up delay-300 hover-lift" style="background: var(--sake-wave); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">特別な酒米へのこだわり</span>
+                </div>
+            </div>
+            <div class="about-image card" style="height: 400px; background: var(--light-blue); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; inset: 0; background: var(--sake-wave); opacity: 0.1;"></div>
+                <div style="text-align: center; z-index: 1;">
+                    <div style="font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem;">🍶</div>
+                    <p style="color: var(--primary-color); font-family: var(--font-japanese);">伝統の酒造り</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- 商品一覧 -->
+    <section id="products" class="section scroll-fade" style="background: var(--light-gold);">
+        <h2 class="section-title">商品一覧</h2>
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <p style="font-size: 1.1rem; color: var(--primary-color); line-height: 1.8;">
+                高木酒造株式会社の「十四代」シリーズをご紹介いたします。
+            </p>
+        </div>
+        <div class="product-grid">
+            <!-- 十四代 鑑評会出品酒 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">鑑評会出品酒</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">十四代 鑑評会出品酒</h3>
+                        <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                        <p class="product-type">純米大吟醸</p>
+                        <p class="product-description">
+                            鑑評会出品の限定酒。やさしくも濃厚で果実香豊かな逸品。
+                        </p>
+                    </div>
+                    <a href="products/juyondai-kanpyoukai.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 吟撰 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">吟撰</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">十四代 吟撰</h3>
+                        <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                        <p class="product-type">吟醸</p>
+                        <p class="product-description">
+                            夏季限定品。爽やかでさっぱりとした味わい。
+                        </p>
+                    </div>
+                    <a href="products/juyondai-ginsen.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 極上諸白 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">極上諸白</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 極上諸白</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米大吟醸</p>
+                    <p class="product-description">
+                        繊細な白桃とメロンの香り。バランスの取れたフレッシュな果実感。
+                    </p>
+                    <a href="products/juyondai-gokujo-morohaku.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 本丸 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">本丸</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 本丸</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">吟醸</p>
+                    <p class="product-description">
+                        手頃な価格で高品質。十四代を代表する定番酒。
+                    </p>
+                    <a href="products/juyondai-honmaru.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 龍泉 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">龍泉</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 龍泉</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米大吟醸</p>
+                    <p class="product-description">
+                        山田錦使用。SAKE COMPETITION 2019 Super Premium 1位受賞。
+                    </p>
+                    <a href="products/juyondai-ryusen.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 EXTRA -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">EXTRA</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 EXTRA</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米大吟醸</p>
+                    <p class="product-description">
+                        雪女神使用。バランスの良い味わいと爽やかな後口。
+                    </p>
+                    <a href="products/juyondai-extra.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 七垂二十貫 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">七垂二十貫</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 七垂二十貫</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米大吟醸</p>
+                    <p class="product-description">
+                        究極の限定品。袋吊りで丁寧に搾られた至高の一滴。
+                    </p>
+                    <a href="products/juyondai-nanatare-nijukkan.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 大極上生 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">大極上生</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 大極上生</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米大吟醸</p>
+                    <p class="product-description">
+                        生酒ならではのフレッシュで生き生きとした味わい。
+                    </p>
+                    <a href="products/juyondai-daikiwami-nama.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 中取り純米吟醸 播州山田錦 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">中取り</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 中取り純米吟醸 播州山田錦</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米吟醸</p>
+                    <p class="product-description">
+                        播州山田錦使用。中取りの絶妙な旨味と香りのバランス。
+                    </p>
+                    <a href="products/juyondai-nakadori-yamadanishiki.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 中取り純米吟醸 播州愛山 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">中取り愛山</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 中取り純米吟醸 播州愛山</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米吟醸</p>
+                    <p class="product-description">
+                        希少な愛山米を使用。華やかで上品な味わい。
+                    </p>
+                    <a href="products/juyondai-nakadori-aizan.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 龍の落とし子 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">龍の落とし子</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 龍の落とし子</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米大吟醸</p>
+                    <p class="product-description">
+                        高木酒造オリジナル酒米「龍の落とし子」使用の幻の酒。
+                    </p>
+                    <a href="products/juyondai-ryu-no-otoshigo.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+
+            <!-- 十四代 槽垂れ本生 -->
+            <div class="product-card hover-lift">
+                <div class="product-image">
+                    <div class="product-placeholder">槽垂れ本生</div>
+                </div>
+                <div class="product-info">
+                    </div>
+                    <div class="product-content">
+                    <h3 class="product-name">十四代 槽垂れ本生</h3>
+                    <p class="product-brewery">高木酒造株式会社 | 山形県</p>
+                    <p class="product-type">純米吟醸</p>
+                    <p class="product-description">
+                        槽から自然に垂れる最初の雫のみを集めた贅沢な生酒。
+                    </p>
+                    <a href="products/juyondai-funetare-honnamazake.html" class="btn btn-outline hover-glow">詳細を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 受賞歴・評価 -->
+    <section id="awards" class="section scroll-fade" style="background: var(--light-gold);">
+        <h2 class="section-title">受賞歴・評価</h2>
+        <div class="awards-content" style="max-width: 1000px; margin: 0 auto;">
+            <div class="awards-intro" style="text-align: center; margin-bottom: 3rem;">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-color);">
+                    十四代は国内外の品評会で数多くの最高賞を受賞し、<br>
+                    世界最高峰の日本酒として認められています。
+                </p>
+            </div>
+            
+            <div class="awards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- SAKE COMPETITION -->
+                <div class="award-card card hover-lift animate-fade-in-up delay-100" style="padding: 2rem; text-align: center;">
+                    <div class="award-icon" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;">🏆</div>
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">SAKE COMPETITION 2019</h3>
+                    <p style="font-weight: 600; color: var(--accent-color); margin-bottom: 0.5rem;">Super Premium部門 第1位</p>
+                    <p style="color: var(--secondary-color);">十四代 龍泉</p>
+                </div>
+                
+                <!-- 全国新酒鑑評会 -->
+                <div class="award-card card hover-lift animate-fade-in-up delay-200" style="padding: 2rem; text-align: center;">
+                    <div class="award-icon" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;">🥇</div>
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">全国新酒鑑評会</h3>
+                    <p style="font-weight: 600; color: var(--accent-color); margin-bottom: 0.5rem;">金賞受賞 多数</p>
+                    <p style="color: var(--secondary-color);">最高品質を証明する栄誉</p>
+                </div>
+                
+                <!-- 国際的評価 -->
+                <div class="award-card card hover-lift animate-fade-in-up delay-300" style="padding: 2rem; text-align: center;">
+                    <div class="award-icon" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;">🌍</div>
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">国際的評価</h3>
+                    <p style="font-weight: 600; color: var(--accent-color); margin-bottom: 0.5rem;">世界のトップレストラン採用</p>
+                    <p style="color: var(--secondary-color);">ミシュラン星付きレストランでの提供</p>
+                </div>
+            </div>
+            
+            <div class="premium-status" style="margin-top: 3rem; padding: 2rem; background: rgba(212, 175, 55, 0.1); border-radius: 20px; text-align: center;">
+                <p style="font-size: 1.1rem; color: var(--primary-color); font-weight: 500;">
+                    希少性の高い限定生産により、「幻の酒」として愛されています
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 歴史 -->
+    <section id="history" class="section scroll-fade">
+        <h2 class="section-title">歴史と伝統</h2>
+        <div class="history-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="timeline" style="margin-top: 3rem;">
+                <div class="timeline-item" style="margin-bottom: 3rem;">
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">元和元年（1615年）</h3>
+                    <p>高木酒造創業。山形県村山市で400年以上の歴史が始まる。</p>
+                </div>
+                <div class="timeline-item" style="margin-bottom: 3rem;">
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">「十四代」の誕生</h3>
+                    <p>現当主・高木顕統氏が「十四代」ブランドを立ち上げ、日本酒業界に革命を起こす。</p>
+                </div>
+                <div class="timeline-item" style="margin-bottom: 3rem;">
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">最高品質へのこだわり</h3>
+                    <p>山田錦、愛山、雪女神など最高級の酒米を使用。袋吊り、中取りなど伝統技法を駆使。</p>
+                </div>
+                <div class="timeline-item" style="margin-bottom: 3rem;">
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">世界が認める品質</h3>
+                    <p>SAKE COMPETITIONなどで多数受賞。「聞こえないものを聞き、見えないものを見る」哲学で未来へ。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス -->
+    <section id="access" class="section scroll-fade" style="background: var(--light-blue);">
+        <h2 class="section-title">アクセス・営業情報</h2>
+        <div style="max-width: 700px; margin: 0 auto;">
+            <div class="access-info card" style="padding: 3rem; text-align: center;">
+                <h3 style="font-family: var(--font-japanese); font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary-color);">高木酒造株式会社</h3>
+                <div style="line-height: 2; margin-bottom: 2rem;">
+                    <p><strong>住所:</strong> 〒995-0111 山形県村山市富並１８２６</p>
+                    <p><strong>電話:</strong> 0237-57-2131</p>
+                    <p><strong>代表者:</strong> 高木 顕統</p>
+                    <p><strong>創業:</strong> 元和元年（1615年）</p>
+                    <p><strong>代表銘柄:</strong> 十四代</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <p style="color: var(--secondary-color); font-style: italic;">
+                        ※ 十四代は限定生産のため、直接販売は行っておりません。<br>
+                        特約店でのお求めをお願いいたします。
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>高木酒造株式会社</h3>
+                <p>十四代 - 聞こえないものを聞き、見えないものを見る</p>
+                <p style="margin-top: 1rem;">元和元年創業、400年の伝統と革新</p>
+            </div>
+            <div class="footer-section">
+                <h3>こだわりの素材</h3>
+                <p>原料米: 山田錦・愛山・雪女神</p>
+                <p>製法: 袋吊り・中取り・槽垂れ</p>
+                <p>精米歩合: 23%～50%</p>
+            </div>
+            <div class="footer-section">
+                <h3>所在地・連絡先</h3>
+                <p>〒995-0111</p>
+                <p>山形県村山市富並１８２６</p>
+                <p>TEL: 0237-57-2131</p>
+                <p>蔵元: 高木 顕統</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 高木酒造株式会社. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AI十四代 チャットボット -->
+    <div class="chatbot-container">
+        <button class="chatbot-button animate-pulse" onclick="toggleChatbot()">
+            <img src="ai-juyondai-icon.png" alt="AI十四代" class="chatbot-avatar-btn">
+        </button>
+    </div>
+
+    <!-- AI十四代 チャットボットウィンドウ -->
+    <div id="chatbotWindow" class="chatbot-window" style="display: none;">
+        <!-- コンテンツはJavaScriptで動的に生成 -->
+    </div>
+
+    <!-- Google翻訳要素 -->
+    <div id="google_translate_element" style="display: none;"></div>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/google-translate-api.js"></script>
+    <script src="js/ai-juyondai-chatbot.js"></script>
+    <script src="js/product-images.js"></script>
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        // チャットボット機能はai-juyondai-chatbot.jsで処理
+
+
+        // モバイルメニュー切り替え
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // メディアクエリでモバイルメニューボタン表示制御
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        function handleMediaQuery(e) {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (e.matches) {
+                menuBtn.style.display = 'block';
+            } else {
+                menuBtn.style.display = 'none';
+                document.getElementById('mainNav').classList.remove('active');
+            }
+        }
+        mediaQuery.addListener(handleMediaQuery);
+        handleMediaQuery(mediaQuery);
+        
+        // モバイル用のタッチイベント最適化
+        if (window.innerWidth <= 768) {
+            // パッシブリスナーでスクロール性能向上
+            document.addEventListener('touchstart', function(){}, {passive: true});
+            document.addEventListener('touchmove', function(){}, {passive: true});
+        }
+    </script>
+</body>
+</html>

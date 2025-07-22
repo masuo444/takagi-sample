@@ -1,0 +1,283 @@
+/* モバイル用レスポンシブスタイル */
+@media (max-width: 768px) {
+  /* ヘッダーのモバイル対応 */
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .mobile-menu-btn {
+    order: 1;
+    display: block !important;
+  }
+  
+  .logo {
+    order: 2;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .header-translate-container {
+    order: 3;
+  }
+  
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    z-index: 1000;
+    order: 4;
+    width: 100%;
+  }
+  
+  .nav.active {
+    display: flex;
+  }
+  
+  /* モバイルメニューボタン */
+  .mobile-menu-btn {
+    display: block !important;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--primary-color);
+    min-width: 40px;
+    height: 40px;
+  }
+  
+  /* ヒーローセクションのモバイル対応 */
+  .hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  /* 商品を見るボタンのモバイル最適化 */
+  .hero .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    display: inline-block;
+    width: auto;
+    max-width: 280px;
+  }
+  
+  /* セクションのモバイル対応 */
+  .section {
+    padding: 3rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  /* 蔵元についてのモバイル対応 */
+  .about-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .about-image {
+    height: 300px !important;
+  }
+  
+  /* 商品グリッドのモバイル対応 */
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* フッターのモバイル対応 */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  /* チャットボットのモバイル対応 */
+  .chatbot-window {
+    width: 95%;
+    height: 85%;
+    max-width: none;
+    max-height: none;
+    bottom: 5px;
+    right: 2.5%;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chatbot-messages,
+  .ai-sakura-messages {
+    height: calc(100% - 140px);
+    padding: 1rem;
+  }
+  
+  .chatbot-button {
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* チャットボット内のボタンとコントロールのモバイル対応 */
+  .quick-actions-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .quick-action-btn {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .ai-sakura-input-area {
+    padding: 1rem;
+  }
+  
+  .input-container {
+    gap: 0.5rem;
+  }
+  
+  #aiSakuraInput {
+    font-size: 16px; /* iOS でのズーム防止 */
+  }
+  
+  /* ボタンのモバイル対応 */
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 小型デバイス用 */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .product-name {
+    font-size: 1.3rem;
+  }
+  
+  .feature-tag {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 1rem !important;
+  }
+  
+  /* 小型デバイスでのボタン調整 */
+  .hero .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    max-width: 240px;
+  }
+}
+
+/* タブレット用の調整 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .header-content {
+    padding: 1.5rem;
+  }
+  
+  .section {
+    padding: 4rem 2rem;
+  }
+}
+
+/* モバイルでのタッチフレンドリーな調整 */
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+  }
+  
+  .product-card:hover {
+    transform: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  /* タッチデバイスでのタップハイライト */
+  .btn,
+  .nav-link,
+  .chatbot-button {
+    -webkit-tap-highlight-color: rgba(212, 165, 116, 0.2);
+  }
+}
+
+/* 横向きモバイル対応 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    height: 80vh;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .section {
+    padding: 2rem 1rem;
+  }
+  
+  .chatbot-window {
+    height: 90%;
+    width: 70%;
+    right: 15%;
+  }
+}
+
+/* パフォーマンス最適化 */
+@media (max-width: 768px) {
+  /* GPU加速を有効にする */
+  .hero,
+  .product-card,
+  .btn,
+  .chatbot-window {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* スクロール性能向上 */
+  .chatbot-messages,
+  .ai-sakura-messages {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+  
+  /* タッチスクロール最適化 */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "takagi-shuzo-official-site",
+  "version": "1.0.0",
+  "description": "高木酒造株式会社公式サイト - 十四代",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site build complete'",
+    "dev": "npx http-server . -p 8080",
+    "functions": "netlify dev"
+  },
+  "keywords": [
+    "sake",
+    "juyondai",
+    "takagi-shuzo",
+    "yamagata",
+    "japanese-sake"
+  ],
+  "author": "高木酒造株式会社",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "netlify-cli": "^15.0.0",
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/takagi-shuzo/official-site.git"
+  },
+  "homepage": "https://takagi-shuzo.netlify.app"
+}

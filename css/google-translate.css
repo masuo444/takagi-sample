@@ -1,0 +1,361 @@
+/* Google翻訳 言語選択UI */
+
+/* Google翻訳ウィジェットのスタイル調整 */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+/* 翻訳時のレイアウト保持 */
+.is-translated img {
+  vertical-align: middle;
+}
+
+.translate-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.language-selector-wrapper {
+  position: relative;
+}
+
+.language-toggle {
+  background: linear-gradient(135deg, #6ba3d6 0%, #4a7ba7 100%);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 140px;
+  box-shadow: 0 2px 10px rgba(107, 163, 214, 0.4);
+}
+
+.language-toggle:hover {
+  background: linear-gradient(135deg, #7bb0e0 0%, #5a8bb7 100%);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(107, 163, 214, 0.5);
+}
+
+.language-toggle.active {
+  background: linear-gradient(135deg, #8bbae5 0%, #6a9bc7 100%);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 20px rgba(107, 163, 214, 0.6);
+}
+
+.language-toggle.translating {
+  background: rgba(107, 163, 214, 0.3);
+  border-color: rgba(107, 163, 214, 0.5);
+  cursor: not-allowed;
+}
+
+.current-language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.flag {
+  font-size: 1.2rem;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.lang-code {
+  font-weight: 500;
+  flex: 1;
+}
+
+.chevron {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.language-toggle.active .chevron {
+  transform: rotate(180deg);
+}
+
+.translation-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ドロップダウンメニュー */
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(26, 59, 92, 0.2);
+  border: 1px solid var(--border-color);
+  min-width: 280px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.language-dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.language-dropdown-header {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.translate-icon {
+  font-size: 1.2rem;
+}
+
+.language-options {
+  padding: 0.5rem 0;
+}
+
+.language-option {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.language-option:hover {
+  background: var(--light-blue);
+  color: var(--primary-color);
+}
+
+.language-option.active {
+  background: var(--gradient-accent);
+  color: white;
+  font-weight: 600;
+}
+
+.language-option .flag {
+  font-size: 1.3rem;
+  width: 20px;
+  text-align: center;
+}
+
+.lang-name {
+  flex: 1;
+  text-align: left;
+}
+
+.original-badge {
+  background: var(--accent-gold);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.translation-info {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--light-blue);
+  text-align: center;
+}
+
+.translation-info small {
+  color: #666;
+  font-size: 0.75rem;
+}
+
+/* アニメーション効果 */
+.language-option {
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+
+.language-option:hover {
+  transform: translateX(5px);
+}
+
+.language-option.active {
+  transform: translateX(0);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .translate-container {
+    margin-right: 0.5rem;
+  }
+  
+  .language-toggle {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+  
+  .language-dropdown {
+    right: -20px;
+    min-width: 250px;
+  }
+  
+  .lang-code {
+    display: none;
+  }
+  
+  .current-language {
+    justify-content: center;
+  }
+}
+
+/* 小画面での調整 */
+@media (max-width: 480px) {
+  .language-dropdown {
+    right: -40px;
+    left: auto;
+    min-width: 220px;
+  }
+  
+  .language-toggle {
+    min-width: 80px;
+  }
+  
+  .current-language .flag {
+    font-size: 1rem;
+  }
+}
+
+/* ヘッダー統合スタイル */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-content .translate-container {
+  order: 2;
+}
+
+.header-content .nav {
+  order: 3;
+}
+
+.header-content .logo {
+  order: 1;
+  flex-shrink: 0;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .language-dropdown {
+    background: rgba(30, 30, 30, 0.98);
+    border-color: rgba(107, 163, 214, 0.3);
+  }
+  
+  .language-option {
+    color: #e0e0e0;
+  }
+  
+  .language-option:hover {
+    background: rgba(107, 163, 214, 0.2);
+    color: #ffffff;
+  }
+  
+  .translation-info {
+    background: rgba(40, 40, 40, 0.8);
+    border-color: rgba(107, 163, 214, 0.2);
+  }
+  
+  .translation-info small {
+    color: #b0b0b0;
+  }
+}
+
+/* 高コントラストモード */
+@media (prefers-contrast: high) {
+  .language-toggle {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+  }
+  
+  .language-dropdown {
+    border: 2px solid var(--primary-color);
+  }
+  
+  .language-option.active {
+    outline: 2px solid var(--accent-gold);
+  }
+}
+
+/* アクセシビリティ改善 */
+.language-option:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -2px;
+}
+
+.language-toggle:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* 翻訳進行中の視覚効果 */
+.translating-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(107, 163, 214, 0.1);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/* パルス効果 */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.language-toggle.translating {
+  animation: pulse 1.5s ease-in-out infinite;
+}

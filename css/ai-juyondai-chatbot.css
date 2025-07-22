@@ -1,0 +1,588 @@
+/* AI十四代 チャットボット専用スタイル */
+
+/* API ステータスライト */
+.ai-name-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.api-status-indicators {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.status-light {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.status-dot.connected {
+    background-color: #22c55e;
+    border-color: #16a34a;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+    animation: pulse-green 2s infinite;
+}
+
+.status-dot.disconnected {
+    background-color: #ef4444;
+    border-color: #dc2626;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+    animation: pulse-red 2s infinite;
+}
+
+.status-label {
+    font-weight: 500;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* アニメーション */
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 4px rgba(239, 68, 68, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+.chatbot-window {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(26, 59, 92, 0.3);
+  border: 1px solid rgba(107, 163, 214, 0.2);
+  backdrop-filter: blur(20px);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  font-family: var(--font-modern);
+}
+
+/* ヘッダー */
+.ai-sakura-header {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 20px 20px 0 0;
+}
+
+.ai-sakura-avatar {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: sakuraFloat 3s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.sakura-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@keyframes sakuraFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.ai-sakura-info {
+  flex: 1;
+}
+
+.ai-sakura-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ai-status {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.ai-sakura-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-selector {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.language-selector option {
+  background: var(--primary-color);
+  color: white;
+}
+
+.chatbot-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.chatbot-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* メッセージエリア */
+.ai-sakura-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.ai-sakura-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ai-sakura-messages::-webkit-scrollbar-track {
+  background: var(--light-blue);
+  border-radius: 3px;
+}
+
+.ai-sakura-messages::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 3px;
+}
+
+.welcome-message {
+  margin-bottom: 1rem;
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.ai-avatar {
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(107, 163, 214, 0.3);
+  overflow: hidden;
+}
+
+.sakura-mini-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.ai-text {
+  background: var(--light-blue);
+  border-radius: 12px 12px 12px 4px;
+  padding: 0.8rem;
+  max-width: 80%;
+  line-height: 1.5;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.ai-text p {
+  margin: 0 0 0.5rem 0;
+}
+
+.ai-text p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.feature-badge {
+  background: var(--sake-wave);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.user-message-content {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+.user-text {
+  background: var(--gradient-accent);
+  color: white;
+  border-radius: 12px 12px 4px 12px;
+  padding: 0.8rem;
+  max-width: 80%;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(107, 163, 214, 0.3);
+}
+
+.user-avatar {
+  font-size: 1.2rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* タイピングインジケーター */
+.typing-indicator {
+  margin-bottom: 1rem;
+}
+
+.typing-dots {
+  background: var(--light-blue);
+  border-radius: 12px 12px 12px 4px;
+  padding: 1rem;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  border: 1px solid var(--border-color);
+}
+
+.typing-dots span {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* クイックアクション */
+.ai-sakura-quick-actions {
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--light-blue);
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.quick-action-btn {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.quick-action-btn:hover {
+  background: var(--gradient-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 163, 214, 0.3);
+}
+
+/* 入力エリア */
+.ai-sakura-input-area {
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  background: white;
+  border-radius: 0 0 20px 20px;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#aiSakuraInput {
+  flex: 1;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  font-family: var(--font-modern);
+  outline: none;
+  transition: all 0.3s ease;
+  background: var(--light-blue);
+}
+
+#aiSakuraInput:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(107, 163, 214, 0.1);
+}
+
+.voice-btn, .send-btn {
+  background: var(--gradient-accent);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.voice-btn:hover, .send-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(107, 163, 214, 0.4);
+}
+
+.voice-btn:active, .send-btn:active {
+  transform: scale(0.95);
+}
+
+.input-status {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+  min-height: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 90vw;
+    height: 80vh;
+    bottom: 10px;
+    right: 5vw;
+    left: 5vw;
+  }
+  
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ai-sakura-header {
+    padding: 0.8rem;
+  }
+  
+  .ai-sakura-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .ai-status {
+    font-size: 0.8rem;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .chatbot-window {
+    background: rgba(30, 30, 30, 0.98);
+    border-color: rgba(107, 163, 214, 0.3);
+  }
+  
+  .ai-text {
+    background: rgba(50, 50, 50, 0.8);
+    color: #e0e0e0;
+    border-color: rgba(107, 163, 214, 0.2);
+  }
+  
+  #aiSakuraInput {
+    background: rgba(50, 50, 50, 0.8);
+    color: #e0e0e0;
+    border-color: rgba(107, 163, 214, 0.3);
+  }
+  
+  .quick-action-btn {
+    background: rgba(50, 50, 50, 0.8);
+    color: #e0e0e0;
+    border-color: rgba(107, 163, 214, 0.2);
+  }
+  
+  .ai-sakura-quick-actions {
+    background: rgba(40, 40, 40, 0.8);
+  }
+  
+  .ai-sakura-input-area {
+    background: rgba(30, 30, 30, 0.9);
+  }
+}
+
+/* アニメーション強化 */
+.chatbot-window.opening {
+  animation: chatbotSlideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes chatbotSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* チャットボタンの改良 */
+.chatbot-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.chatbot-avatar-btn {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.chatbot-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.chatbot-button:hover::before {
+  left: 100%;
+}
+
+/* アクセシビリティ対応 */
+.chatbot-window:focus-within {
+  box-shadow: 0 20px 60px rgba(26, 59, 92, 0.4), 0 0 0 3px rgba(107, 163, 214, 0.3);
+}
+
+.quick-action-btn:focus,
+.voice-btn:focus,
+.send-btn:focus,
+#aiSakuraInput:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+  .chatbot-window {
+    border: 3px solid var(--primary-color);
+  }
+  
+  .ai-text {
+    border: 2px solid var(--accent-color);
+  }
+  
+  .user-text {
+    border: 2px solid var(--primary-color);
+  }
+}
