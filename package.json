@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/takagi-shuzo/official-site.git"
+    "url": "https://github.com/masuo444/takagi-sample.git"
   },
-  "homepage": "https://takagi-shuzo.netlify.app"
+  "homepage": "https://takagi-sample.netlify.app"
 }
