@@ -9,7 +9,9 @@
     "functions": "netlify dev",
     "setup": "node scripts/setup-env.js",
     "deploy": "chmod +x scripts/deploy.sh && ./scripts/deploy.sh",
-    "deploy:auto": "npm run setup && npm run deploy"
+    "deploy:auto": "npm run setup && npm run deploy",
+    "quick-deploy": "node scripts/quick-deploy.js",
+    "paste-deploy": "node -e 'const keys=require(\"./PASTE-API-KEYS.js\"); process.env.OPENAI_API_KEY=keys.OPENAI_API_KEY; process.env.DEEPL_API_KEY=keys.DEEPL_API_KEY; require(\"./scripts/quick-deploy.js\");'"
   },
   "keywords": [
     "sake",
