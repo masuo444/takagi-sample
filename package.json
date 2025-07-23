@@ -6,7 +6,10 @@
   "scripts": {
     "build": "echo 'Static site build complete'",
     "dev": "npx http-server . -p 8080",
-    "functions": "netlify dev"
+    "functions": "netlify dev",
+    "setup": "node scripts/setup-env.js",
+    "deploy": "chmod +x scripts/deploy.sh && ./scripts/deploy.sh",
+    "deploy:auto": "npm run setup && npm run deploy"
   },
   "keywords": [
     "sake",

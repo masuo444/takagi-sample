@@ -1,12 +1,44 @@
-# 高木酒造株式会社 公式サイト
+# 🌸 高木酒造株式会社 公式サイト
 
-山形県村山市にある元和元年（1615年）創業の老舗酒蔵「高木酒造株式会社」の公式ウェブサイトです。日本酒「十四代」で知られる伝統ある酒蔵の歴史、哲学、商品ラインナップを紹介しています。
+元和元年（1615年）創業の高木酒造株式会社の公式ウェブサイト。十四代をはじめとする高品質な日本酒の情報とAIサクラチャットボットを提供。
+
+## 🚀 自動デプロイ（推奨）
+
+### 方法1: npm スクリプト（最も簡単）
+```bash
+# リポジトリをクローン
+git clone https://github.com/masuo444/takagi-sample.git
+cd takagi-sample
+
+# 依存関係をインストール
+npm install
+
+# 自動セットアップとデプロイ
+npm run deploy:auto
+```
+
+### 方法2: 個別実行
+```bash
+# APIキー設定
+npm run setup
+
+# デプロイ実行
+npm run deploy
+```
+
+### 方法3: ワンクリックデプロイ
+[netlify-deploy.html](./netlify-deploy.html) をブラウザで開いてAPIキーを入力
+
+## 🔑 必要なAPIキー
+
+- **OpenAI API Key** (必須): [OpenAI Platform](https://platform.openai.com/api-keys)
+- **DeepL API Key** (オプション): [DeepL Pro](https://www.deepl.com/ja/pro#developer)
 
 ## 🍶 特徴
 
 - **レスポンシブデザイン**: モバイル、タブレット、デスクトップに最適化
-- **AI チャットボット**: OpenAI GPT搭載の「AI十四代」による商品案内
-- **多言語対応**: 日本語、英語、韓国語、中国語に対応（DeepL API）
+- **AIサクラチャットボット**: OpenAI GPT搭載の専門AI
+- **多言語対応**: 日本語、英語、韓国語、中文対応（DeepL API）
 - **高品質コンテンツ**: 12種類の十四代シリーズ詳細ページ
 - **SEO最適化**: 検索エンジン最適化済み
 
