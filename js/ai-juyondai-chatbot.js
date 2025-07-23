@@ -1,9 +1,9 @@
 /**
- * AI十四代 - 高木酒造株式会社専用チャットボット
+ * AIサクラ - 高木酒造株式会社専用チャットボット
  * GPT API と DeepL API を統合した高度なチャットボット
  */
 
-class AIJuyondaiChatbot {
+class AISakuraChatbot {
     constructor() {
         this.isOpen = false;
         this.apiKey = null; // 環境変数またはユーザー設定から取得
@@ -21,7 +21,7 @@ class AIJuyondaiChatbot {
         this.setupEventListeners();
         this.createChatInterface();
         await this.checkAPIStatus();
-        console.log('🍶 AI十四代が起動しました');
+        console.log('🌸 AIサクラが起動しました');
     }
 
     async loadBreweryConfig() {
@@ -40,11 +40,11 @@ class AIJuyondaiChatbot {
         chatContainer.innerHTML = `
             <div class="ai-sakura-header">
                 <div class="ai-sakura-avatar">
-                    <img src="ai-juyondai-icon.png" alt="AI十四代" class="juyondai-avatar-img">
+                    <img src="ai-sakura-icon.svg" alt="AIサクラ" class="juyondai-avatar-img">
                 </div>
                 <div class="ai-sakura-info">
                     <div class="ai-name-container">
-                        <h3>AI十四代</h3>
+                        <h3>AIサクラ</h3>
                         <div class="api-status-indicators">
                             <div class="status-light" id="gptStatus" title="GPT API Status">
                                 <span class="status-dot gpt-dot"></span>
@@ -67,10 +67,10 @@ class AIJuyondaiChatbot {
                 <div class="welcome-message">
                     <div class="ai-message">
                         <div class="ai-avatar">
-                            <img src="ai-juyondai-icon.png" alt="AI十四代" class="juyondai-mini-avatar">
+                            <img src="ai-sakura-icon.svg" alt="AIサクラ" class="juyondai-mini-avatar">
                         </div>
                         <div class="ai-text">
-                            <p>こんにちは！AI十四代です🍶</p>
+                            <p>こんにちは！AIサクラです🌸</p>
                             <p>元和元年（1615年）創業の高木酒造株式会社について、何でもお聞きください。</p>
                             <div class="ai-features">
                                 <span class="feature-badge">🤖 GPT搭載</span>
@@ -437,7 +437,7 @@ class AIJuyondaiChatbot {
             messageDiv.innerHTML = `
                 <div class="ai-message">
                     <div class="ai-avatar">
-                        <img src="ai-juyondai-icon.png" alt="AI十四代" class="juyondai-mini-avatar">
+                        <img src="ai-sakura-icon.svg" alt="AIサクラ" class="juyondai-mini-avatar">
                     </div>
                     <div class="ai-text">${this.formatAIResponse(text)}</div>
                 </div>
@@ -655,16 +655,16 @@ class AIJuyondaiChatbot {
 }
 
 // グローバルインスタンスを作成
-window.aiJuyondai = new AIJuyondaiChatbot();
+window.aiSakura = new AISakuraChatbot();
 
 // ページ読み込み完了後に初期化
 document.addEventListener('DOMContentLoaded', () => {
-    window.aiJuyondai.loadAPIKeys();
+    window.aiSakura.loadAPIKeys();
     
     // 定期的にAPI状態をチェック（5分間隔）
     setInterval(() => {
-        if (window.aiJuyondai) {
-            window.aiJuyondai.checkAPIStatus();
+        if (window.aiSakura) {
+            window.aiSakura.checkAPIStatus();
         }
     }, 300000); // 5分 = 300,000ms
 });

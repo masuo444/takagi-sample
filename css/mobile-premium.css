@@ -42,28 +42,30 @@
   }
 
   .header-content {
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
     margin: 0;
     position: relative;
+    gap: 0.5rem;
   }
 
   /* 1行表示の酒造名 */
   .logo {
     font-family: 'Noto Serif JP', serif;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 140px;
+    overflow: visible;
+    text-overflow: initial;
+    max-width: none;
     position: relative;
+    flex-shrink: 0;
   }
 
   .logo::after {
@@ -121,21 +123,22 @@
   /* 翻訳ドロップダウン最適化 */
   .header-translate-container {
     position: relative;
+    flex-shrink: 0;
   }
 
   .translate-btn {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
-    padding: 0.5rem 0.8rem;
+    gap: 0.2rem;
+    padding: 0.4rem 0.6rem;
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--primary-color);
     cursor: pointer;
     transition: all 0.2s ease;
-    min-height: 44px; /* タッチターゲット最小サイズ */
+    min-height: 40px; /* タッチターゲット最小サイズ */
   }
 
   .translate-btn:active {
@@ -439,6 +442,14 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    padding: 8px;
+  }
+
+  .chatbot-avatar-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: contain;
   }
 
   .chatbot-button::before {

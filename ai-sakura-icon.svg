@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景グラデーション -->
+  <defs>
+    <radialGradient id="bg-gradient" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#FFE8CC"/>
+      <stop offset="100%" style="stop-color:#F4D03F"/>
+    </radialGradient>
+    <linearGradient id="sakura-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB3E6"/>
+      <stop offset="50%" style="stop-color:#FF91D7"/>
+      <stop offset="100%" style="stop-color:#FF6BC7"/>
+    </linearGradient>
+    <linearGradient id="center-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#FFE8CC"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景円 -->
+  <circle cx="32" cy="32" r="30" fill="url(#bg-gradient)" stroke="rgba(212, 175, 55, 0.4)" stroke-width="2"/>
+  
+  <!-- 桜の花びら -->
+  <!-- 花びら1 (上) -->
+  <ellipse cx="32" cy="20" rx="4" ry="8" fill="url(#sakura-gradient)" transform="rotate(0 32 20)"/>
+  <!-- 花びら2 (右上) -->
+  <ellipse cx="40" cy="25" rx="4" ry="8" fill="url(#sakura-gradient)" transform="rotate(72 40 25)"/>
+  <!-- 花びら3 (右下) -->
+  <ellipse cx="37" cy="38" rx="4" ry="8" fill="url(#sakura-gradient)" transform="rotate(144 37 38)"/>
+  <!-- 花びら4 (左下) -->
+  <ellipse cx="27" cy="38" rx="4" ry="8" fill="url(#sakura-gradient)" transform="rotate(216 27 38)"/>
+  <!-- 花びら5 (左上) -->
+  <ellipse cx="24" cy="25" rx="4" ry="8" fill="url(#sakura-gradient)" transform="rotate(288 24 25)"/>
+  
+  <!-- 中心部 -->
+  <circle cx="32" cy="30" r="6" fill="url(#center-gradient)" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1"/>
+  
+  <!-- AI文字 -->
+  <text x="32" y="35" text-anchor="middle" fill="#D4AF37" font-family="Noto Sans JP" font-size="8" font-weight="700">AI</text>
+  
+  <!-- 装飾的な点 -->
+  <circle cx="18" cy="45" r="1.5" fill="#FFB3E6" opacity="0.7"/>
+  <circle cx="46" cy="45" r="1.5" fill="#FFB3E6" opacity="0.7"/>
+  <circle cx="32" cy="52" r="1" fill="#FF91D7" opacity="0.6"/>
+  
+  <!-- 微細なキラキラ効果 -->
+  <g opacity="0.8">
+    <path d="M20 18 L22 20 L20 22 L18 20 Z" fill="#FFFFFF"/>
+    <path d="M44 16 L46 18 L44 20 L42 18 Z" fill="#FFFFFF"/>
+    <path d="M48 40 L50 42 L48 44 L46 42 Z" fill="#FFFFFF"/>
+  </g>
+</svg>
